@@ -14,7 +14,7 @@ export default function TaxResults({ result }: TaxResultsProps) {
       animate={{ opacity: 1, y: 0 }}
       className="mt-8 rounded-2xl bg-gradient-to-br from-blue-50 to-indigo-50 p-8"
     >
-      <h3 className="text-2xl font-bold text-gray-900 mb-6">
+      <h3 className="text-2xl font-bold text-blue-900 mb-6">
         Your Tax Calculation
       </h3>
       
@@ -25,7 +25,7 @@ export default function TaxResults({ result }: TaxResultsProps) {
           className="rounded-xl bg-white p-6 shadow-sm"
         >
           <div className="flex items-center justify-between">
-            <span className="text-gray-600">Total Gain</span>
+            <span className="text-blue-700">Total Gain</span>
             <motion.span
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}

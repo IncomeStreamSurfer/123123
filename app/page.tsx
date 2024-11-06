@@ -10,13 +10,13 @@ export const metadata = {
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-gray-50">
-      <header className="bg-white border-b">
+    <main className="min-h-screen bg-gray-50 text-blue-900">
+      <header className="bg-white border-b border-blue-100">
         <div className="max-w-7xl mx-auto px-4 py-6 sm:px-6 lg:px-8">
-          <h1 className="text-3xl font-bold text-gray-900">
+          <h1 className="text-3xl font-bold text-blue-900">
             UK Capital Gains Tax Calculator 2024/25
           </h1>
-          <p className="mt-2 text-gray-600">
+          <p className="mt-2 text-blue-700">
             Calculate capital gains tax on property, shares, crypto & more
           </p>
         </div>

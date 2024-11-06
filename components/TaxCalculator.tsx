@@ -75,11 +75,11 @@ export default function TaxCalculator() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         onSubmit={handleSubmit}
-        className="space-y-8 bg-white rounded-2xl p-8 shadow-lg"
+        className="space-y-8 bg-white rounded-2xl p-8 shadow-lg text-blue-900"
       >
         {/* Asset Category Selection */}
         <motion.div layout className="col-span-full bg-gradient-to-r from-blue-50 to-indigo-50 p-6 rounded-xl">
-          <label className="block text-lg font-semibold text-gray-900 mb-4">
+          <label className="block text-lg font-semibold text-blue-900 mb-4">
             Select Asset Category
           </label>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -93,7 +93,7 @@ export default function TaxCalculator() {
                 className={`p-4 rounded-lg text-center transition-all ${
                   selectedCategory === category
                     ? 'bg-blue-600 text-white shadow-lg'
-                    : 'bg-white text-gray-700 hover:bg-gray-50'
+                    : 'bg-white text-blue-700 hover:bg-blue-50'
                 }`}
               >
                 {category.charAt(0).toUpperCase() + category.slice(1)}
@@ -103,14 +103,14 @@ export default function TaxCalculator() {
         </motion.div>
 
         {/* Asset Type Selection */}
-        <motion.div layout className="col-span-full bg-white p-6 rounded-xl border border-gray-200">
-          <label className="block text-lg font-semibold text-gray-900 mb-4">
+        <motion.div layout className="col-span-full bg-white p-6 rounded-xl border border-blue-200">
+          <label className="block text-lg font-semibold text-blue-900 mb-4">
             Asset Type
           </label>
           <select
             value={formData.assetType}
             onChange={(e) => handleInputChange('assetType', e.target.value)}
-            className="w-full rounded-lg border-gray-300 shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            className="w-full rounded-lg border-blue-300 shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent text-blue-700"
           >
             {filteredAssetTypes.map((type) => (
               <option key={type.id} value={type.id}>
@@ -123,62 +123,62 @@ export default function TaxCalculator() {
         {/* Purchase and Sale Details */}
         <motion.div layout className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="space-y-4">
-            <label className="block text-lg font-semibold text-gray-900">
+            <label className="block text-lg font-semibold text-blue-900">
               Purchase Details
             </label>
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-sm font-medium text-blue-700 mb-2">
                 Purchase Price (£)
               </label>
               <input
                 type="number"
                 value={formData.purchasePrice || ''}
                 onChange={(e) => handleInputChange('purchasePrice', Number(e.target.value))}
-                className="w-full rounded-lg border-gray-300 shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full rounded-lg border-blue-300 shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent text-blue-700"
                 placeholder="0.00"
                 required
               />
             </div>
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-sm font-medium text-blue-700 mb-2">
                 Purchase Date
               </label>
               <input
                 type="date"
                 value={formData.purchaseDate}
                 onChange={(e) => handleInputChange('purchaseDate', e.target.value)}
-                className="w-full rounded-lg border-gray-300 shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full rounded-lg border-blue-300 shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent text-blue-700"
                 required
               />
             </div>
           </div>
 
           <div className="space-y-4">
-            <label className="block text-lg font-semibold text-gray-900">
+            <label className="block text-lg font-semibold text-blue-900">
               Sale Details
             </label>
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-sm font-medium text-blue-700 mb-2">
                 Sale Price (£)
               </label>
               <input
                 type="number"
                 value={formData.salePrice || ''}
                 onChange={(e) => handleInputChange('salePrice', Number(e.target.value))}
-                className="w-full rounded-lg border-gray-300 shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full rounded-lg border-blue-300 shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent text-blue-700"
                 placeholder="0.00"
                 required
               />
             </div>
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-sm font-medium text-blue-700 mb-2">
                 Sale Date
               </label>
               <input
                 type="date"
                 value={formData.saleDate}
                 onChange={(e) => handleInputChange('saleDate', e.target.value)}
-                className="w-full rounded-lg border-gray-300 shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full rounded-lg border-blue-300 shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent text-blue-700"
                 required
               />
             </div>
@@ -187,7 +187,7 @@ export default function TaxCalculator() {
 
         {/* Income Section */}
         <motion.div layout className="col-span-full bg-gradient-to-r from-green-50 to-emerald-50 p-6 rounded-xl">
-          <h3 className="text-lg font-semibold text-gray-900 mb-4">Your Income Details</h3>
+          <h3 className="text-lg font-semibold text-blue-900 mb-4">Your Income Details</h3>
           <div className="space-y-4">
             <div className="flex items-center space-x-3">
               <input
@@ -197,21 +197,21 @@ export default function TaxCalculator() {
                 onChange={(e) => handleInputChange('hasNoIncome', e.target.checked)}
                 className="rounded border-gray-300 text-blue-600 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
               />
-              <label htmlFor="hasNoIncome" className="text-sm font-medium text-gray-700">
+              <label htmlFor="hasNoIncome" className="text-sm font-medium text-blue-700">
                 I have no other income
               </label>
             </div>
             
             {!formData.hasNoIncome && (
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-blue-700 mb-2">
                   Annual Income (£)
                 </label>
                 <input
                   type="number"
                   value={formData.income || ''}
                   onChange={(e) => handleInputChange('income', Number(e.target.value))}
-                  className="w-full rounded-lg border-gray-300 shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full rounded-lg border-blue-300 shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent text-blue-700"
                   placeholder="Enter your annual income"
                   required={!formData.hasNoIncome}
                 />
@@ -231,7 +231,7 @@ export default function TaxCalculator() {
           >
             {currentAssetFields.map((field: Field) => (
               <div key={field.id} className="relative">
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-blue-700 mb-2">
                   {field.label}
                   {field.tooltip && (
                     <Tooltip content={field.tooltip}>
@@ -251,7 +251,7 @@ export default function TaxCalculator() {
                     type={field.type}
                     value={formData[field.id]?.toString() || ''}
                     onChange={(e) => handleInputChange(field.id, field.type === 'number' ? Number(e.target.value) : e.target.value)}
-                    className="block w-full rounded-lg border-gray-300 shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="block w-full rounded-lg border-blue-300 shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent text-blue-700"
                     placeholder={field.placeholder}
                     required={field.required}
                   />
