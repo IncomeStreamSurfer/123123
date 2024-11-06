@@ -17,6 +17,7 @@ export interface CalculatorFormData {
   saleDate: string
   taxYear: string
   income: number
+  hasNoIncome: boolean
   location: string
   propertyAddress?: string
   previouslyLived?: boolean
@@ -27,7 +28,7 @@ export interface CalculatorFormData {
   cryptoType?: string
   exchangeFees?: number
   walletFees?: number
-  [key: string]: any // Allow dynamic fields
+  [key: string]: string | number | boolean | undefined
 }
 
 export interface TaxResult {

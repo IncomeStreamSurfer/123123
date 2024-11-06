@@ -46,12 +46,12 @@ export default function TaxCalculator() {
     }
   }
 
-  const handleInputChange = (field: string, value: any) => {
+  const handleInputChange = (field: string, value: string | number | boolean) => {
     if (field === 'hasNoIncome') {
       setFormData(prev => ({
         ...prev,
-        hasNoIncome: value,
-        income: value ? 0 : prev.income
+        hasNoIncome: value as boolean,
+        income: (value as boolean) ? 0 : prev.income
       }))
     } else {
       setFormData(prev => ({
@@ -242,14 +242,14 @@ export default function TaxCalculator() {
                 {field.type === 'checkbox' ? (
                   <input
                     type="checkbox"
-                    checked={formData[field.id] || false}
+                    checked={Boolean(formData[field.id])}
                     onChange={(e) => handleInputChange(field.id, e.target.checked)}
                     className="rounded border-gray-300 text-blue-600 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
                   />
                 ) : (
                   <input
                     type={field.type}
-                    value={formData[field.id] || ''}
+                    value={formData[field.id]?.toString() || ''}
                     onChange={(e) => handleInputChange(field.id, field.type === 'number' ? Number(e.target.value) : e.target.value)}
                     className="block w-full rounded-lg border-gray-300 shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                     placeholder={field.placeholder}

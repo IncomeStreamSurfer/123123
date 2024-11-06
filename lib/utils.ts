@@ -3,7 +3,7 @@ import { TAX_YEARS } from './constants'
 
 export function calculateTax(data: CalculatorFormData): TaxResult {
   // Calculate total gain
-  const totalGain = data.salePrice - data.purchasePrice - (data.improvements || 0) - (data.costs || 0)
+  const totalGain = Number(data.salePrice) - Number(data.purchasePrice) - Number(data.improvements || 0) - Number(data.costs || 0)
   
   // Get tax year rates
   const taxYear = TAX_YEARS[data.taxYear as keyof typeof TAX_YEARS]
